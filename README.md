@@ -65,3 +65,7 @@ dotnet build Stillbar.slnx
 ## Сторонние компоненты
 
 [CommunityToolkit.Mvvm](https://github.com/CommunityToolkit/dotnet) (MIT), [NAudio](https://github.com/naudio/NAudio) (MIT), [ZXing.Net](https://github.com/micjahn/ZXing.Net) (Apache 2.0), [Vosk](https://github.com/alphacep/vosk-api) и модель vosk-model-small-ru (Apache 2.0). Данные: Open-Meteo (CC BY 4.0), LRCLIB. Запись экрана использует [ffmpeg](https://ffmpeg.org), если он установлен у вас; в установщик он не входит.
+
+## Лицензия
+
+[MIT](LICENSE): можно свободно использовать, менять и распространять, сохраняя уведомление об авторских правах. Без гарантий.
