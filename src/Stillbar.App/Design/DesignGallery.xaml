@@ -1,0 +1,217 @@
+<Window x:Class="Stillbar.App.Design.DesignGallery"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Stillbar — design gallery" SizeToContent="WidthAndHeight" ResizeMode="CanMinimize"
+        Background="{StaticResource Brush.Bg}">
+
+    <!-- Static gallery of every v1 primitive and its key states, on a desktop-like backdrop. Sample data is made up. -->
+    <Border Padding="32">
+        <Border.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                <GradientStop Color="#2D5FA8" Offset="0"/>
+                <GradientStop Color="#6E9AD2" Offset="1"/>
+            </LinearGradientBrush>
+        </Border.Background>
+
+        <StackPanel Width="760">
+
+            <!-- Pill variants -->
+            <TextBlock Text="Pill" Style="{StaticResource Text.Overline}" Foreground="White" Margin="0,0,0,8"/>
+            <WrapPanel>
+                <!-- idle -->
+                <Border Width="{StaticResource Layout.PillWidth}" Height="{StaticResource Layout.PillHeight}" Background="{StaticResource Brush.Bg}"
+                        CornerRadius="0,0,19,19" Margin="0,0,16,16">
+                    <Grid Margin="16,0">
+                        <TextBlock Style="{StaticResource Icon}" Text="&#xE706;" FontSize="16" Foreground="{StaticResource Brush.Warning}" HorizontalAlignment="Left"/>
+                        <TextBlock Style="{StaticResource Text.Pill}" Text="14:43" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <TextBlock Style="{StaticResource Text.Pill}" Text="18°" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                    </Grid>
+                </Border>
+                <!-- music -->
+                <Border Width="300" Height="{StaticResource Layout.PillHeight}" Background="{StaticResource Brush.Bg}" CornerRadius="0,0,19,19" Margin="0,0,16,16">
+                    <Grid Margin="8,0,16,0">
+                        <Border Width="26" Height="26" CornerRadius="6" HorizontalAlignment="Left">
+                            <Border.Background>
+                                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                    <GradientStop Color="#1FA28A" Offset="0"/><GradientStop Color="#1B3D7A" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Border.Background>
+                        </Border>
+                        <TextBlock Style="{StaticResource Text.Pill}" Text="14:43" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+                            <TextBlock Style="{StaticResource Text.Pill}" Text="18°" Margin="0,0,12,0"/>
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                <Rectangle Width="3" Height="8" RadiusX="1.5" RadiusY="1.5" Fill="{StaticResource Brush.Accent}" Margin="0,0,2,0"/>
+                                <Rectangle Width="3" Height="14" RadiusX="1.5" RadiusY="1.5" Fill="{StaticResource Brush.Accent}" Margin="0,0,2,0"/>
+                                <Rectangle Width="3" Height="10" RadiusX="1.5" RadiusY="1.5" Fill="{StaticResource Brush.Accent}" Margin="0,0,2,0"/>
+                                <Rectangle Width="3" Height="5" RadiusX="1.5" RadiusY="1.5" Fill="{StaticResource Brush.Accent}"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+                <!-- download -->
+                <Border Width="380" Height="{StaticResource Layout.PillHeight}" Background="{StaticResource Brush.Bg}" CornerRadius="0,0,19,19" Margin="0,0,16,16">
+                    <Grid Margin="16,0">
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                            <TextBlock Style="{StaticResource Icon}" Text="&#xE896;" FontSize="16" Margin="0,0,10,0"/>
+                            <TextBlock Style="{StaticResource Text.Pill}" Text="Фото с отпуска.zip" MaxWidth="190"/>
+                        </StackPanel>
+                        <TextBlock Style="{StaticResource Text.Numeric}" FontSize="13" Text="412 МБ · 21 МБ/с" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                    </Grid>
+                </Border>
+                <!-- timer -->
+                <Border Width="{StaticResource Layout.PillWidth}" Height="{StaticResource Layout.PillHeight}" Background="{StaticResource Brush.Bg}" CornerRadius="0,0,19,19" Margin="0,0,16,16">
+                    <Grid Margin="16,0">
+                        <TextBlock Style="{StaticResource Icon}" Text="&#xE916;" FontSize="16" Foreground="{StaticResource Brush.Accent}" HorizontalAlignment="Left"/>
+                        <TextBlock Style="{StaticResource Text.Pill}" Text="04:12" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <TextBlock Style="{StaticResource Text.Pill}" Text="14:43" Foreground="{StaticResource Brush.TextMuted}" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                    </Grid>
+                </Border>
+            </WrapPanel>
+
+            <!-- Panel: home -->
+            <TextBlock Text="Panel · Home" Style="{StaticResource Text.Overline}" Foreground="White" Margin="0,8,0,8"/>
+            <Border Width="{StaticResource Layout.PanelWidth}" Background="{StaticResource Brush.Bg}" CornerRadius="0,0,28,28"
+                    Padding="{StaticResource Pad.Panel}" HorizontalAlignment="Left">
+                <StackPanel>
+                    <!-- tab bar -->
+                    <DockPanel Margin="0,0,0,12">
+                        <StackPanel Orientation="Horizontal" DockPanel.Dock="Right">
+                            <Button Style="{StaticResource IconButton.Ghost}" Content="&#xE720;" ToolTip="Голос"/>
+                            <Button Style="{StaticResource IconButton.Ghost}" Content="&#xE718;" ToolTip="Закрепить" Margin="4,0"/>
+                            <Button Style="{StaticResource IconButton.Ghost}" Content="&#xE713;" ToolTip="Настройки"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <RadioButton Style="{StaticResource Tab}" Tag="&#xE80F;" Content="Обзор" IsChecked="True" GroupName="tabs"/>
+                            <RadioButton Style="{StaticResource Tab}" Tag="&#xE77F;" Content="Буфер" IsEnabled="False" ToolTip="Скоро" GroupName="tabs"/>
+                            <RadioButton Style="{StaticResource Tab}" Tag="&#xE7B8;" Content="Полка" IsEnabled="False" GroupName="tabs"/>
+                            <RadioButton Style="{StaticResource Tab}" Tag="&#xE8D2;" Content="Текст" IsEnabled="False" GroupName="tabs"/>
+                            <RadioButton Style="{StaticResource Tab}" Tag="&#xE8BD;" Content="Чат" IsEnabled="False" GroupName="tabs"/>
+                            <RadioButton Style="{StaticResource Tab}" Tag="&#xE70B;" Content="Заметки" IsEnabled="False" GroupName="tabs"/>
+                            <RadioButton Style="{StaticResource Tab}" Tag="&#xE9E9;" Content="Управление" IsEnabled="False" GroupName="tabs"/>
+                        </StackPanel>
+                    </DockPanel>
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+
+                        <!-- left: media card + volume -->
+                        <StackPanel Margin="0,0,8,0">
+                            <Border CornerRadius="{StaticResource Radius.Lg}" Padding="{StaticResource Pad.Card}">
+                                <Border.Background>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                        <GradientStop Color="#123A36" Offset="0"/>
+                                        <GradientStop Color="{StaticResource Color.Surface}" Offset="0.85"/>
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                                <StackPanel>
+                                    <DockPanel>
+                                        <Border Width="{StaticResource Layout.Art}" Height="{StaticResource Layout.Art}" CornerRadius="{StaticResource Radius.Md}" DockPanel.Dock="Left">
+                                            <Border.Background>
+                                                <RadialGradientBrush GradientOrigin="0.3,0.3" Center="0.4,0.4" RadiusX="0.9" RadiusY="0.9">
+                                                    <GradientStop Color="#5BE0C2" Offset="0"/>
+                                                    <GradientStop Color="#1F8A7A" Offset="0.45"/>
+                                                    <GradientStop Color="#1B2F6B" Offset="1"/>
+                                                </RadialGradientBrush>
+                                            </Border.Background>
+                                        </Border>
+                                        <StackPanel Margin="16,6,0,0">
+                                            <TextBlock Style="{StaticResource Text.Overline}" Text="МУЗЫКА"/>
+                                            <TextBlock Style="{StaticResource Text.Title}" Text="Тихая гавань" Margin="0,2,0,0"/>
+                                            <TextBlock Style="{StaticResource Text.Muted}" Text="Северный ветер"/>
+                                            <Slider Style="{StaticResource Slider.Thin}" Foreground="#5FCDB4" Minimum="0" Maximum="214" Value="86" Margin="0,10,0,0"/>
+                                            <DockPanel>
+                                                <TextBlock Style="{StaticResource Text.Numeric}" Text="−2:08" DockPanel.Dock="Right"/>
+                                                <TextBlock Style="{StaticResource Text.Numeric}" Text="1:26"/>
+                                            </DockPanel>
+                                        </StackPanel>
+                                    </DockPanel>
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,4,0,0">
+                                        <Button Style="{StaticResource IconButton.Ghost}" Content="&#xE892;" ToolTip="Предыдущий"/>
+                                        <Button Style="{StaticResource IconButton.Control}" Content="&#xE769;" ToolTip="Пауза" Margin="20,0"/>
+                                        <Button Style="{StaticResource IconButton.Ghost}" Content="&#xE893;" ToolTip="Следующий"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </Border>
+
+                            <!-- volume row -->
+                            <Border Style="{StaticResource Card}" Padding="12,0" Height="44" Margin="0,8,0,0">
+                                <DockPanel VerticalAlignment="Center">
+                                    <Button Style="{StaticResource IconButton.Ghost}" Content="&#xE767;" ToolTip="Без звука" DockPanel.Dock="Left"/>
+                                    <Border DockPanel.Dock="Right" Background="{StaticResource Brush.SurfaceActive}" CornerRadius="{StaticResource Radius.Md}" Padding="10,4" Margin="8,0,0,0">
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Style="{StaticResource Icon}" Text="&#xE7F5;" FontSize="14" Foreground="{StaticResource Brush.TextMuted}"/>
+                                            <TextBlock Style="{StaticResource Text.Muted}" FontSize="{StaticResource Type.Sm}" Text="Динамики" Margin="8,0,6,0"/>
+                                            <TextBlock Style="{StaticResource Icon}" Text="&#xE70D;" FontSize="10" Foreground="{StaticResource Brush.TextMuted}"/>
+                                        </StackPanel>
+                                    </Border>
+                                    <TextBlock Style="{StaticResource Text.Numeric}" Text="62" DockPanel.Dock="Right" Width="22" TextAlignment="Right" VerticalAlignment="Center"/>
+                                    <Slider Style="{StaticResource Slider.Thin}" Minimum="0" Maximum="100" Value="62" Margin="8,0" VerticalAlignment="Center"/>
+                                </DockPanel>
+                            </Border>
+                        </StackPanel>
+
+                        <!-- right: action grid 2x4 -->
+                        <UniformGrid Grid.Column="1" Columns="2" Rows="4">
+                            <Button Style="{StaticResource ActionTile}" Tag="&#xF406;" Margin="0,0,8,8"><TextBlock Text="Снимок области"/></Button>
+                            <Button Style="{StaticResource ActionTile}" Tag="&#xE7F4;" Margin="0,0,0,8"><TextBlock Text="Снимок экрана"/></Button>
+                            <Button Style="{StaticResource ActionTile}" Tag="&#xE8D2;" Margin="0,0,8,8" IsEnabled="False" ToolTip="Скоро"><TextBlock Text="Распознать текст"/></Button>
+                            <Button Style="{StaticResource ActionTile}" Tag="&#xED14;" Margin="0,0,0,8" IsEnabled="False"><TextBlock Text="Прочитать QR"/></Button>
+                            <Button Style="{StaticResource ActionTile}" Tag="&#xEF3C;" Margin="0,0,8,8" IsEnabled="False"><TextBlock Text="Цвет с экрана"/></Button>
+                            <Button Style="{StaticResource ActionTile}" Tag="&#xE75C;" Margin="0,0,0,8" IsEnabled="False"><TextBlock Text="Без формата"/></Button>
+                            <Button Style="{StaticResource ActionTile}" Tag="&#xE714;" Margin="0,0,8,0" IsEnabled="False"><TextBlock Text="Видео экрана"/></Button>
+                            <Button Style="{StaticResource ActionTile}" Tag="&#xE721;"><TextBlock Text="Быстрая команда"/></Button>
+                        </UniformGrid>
+                    </Grid>
+
+                    <!-- dock -->
+                    <Border Style="{StaticResource Card}" Padding="12,8" Margin="0,8,0,0">
+                        <StackPanel Orientation="Horizontal">
+                            <Border Width="{StaticResource Layout.DockIcon}" Height="{StaticResource Layout.DockIcon}" CornerRadius="{StaticResource Radius.Sm}" Background="{StaticResource Brush.SurfaceHover}" Margin="0,0,8,0">
+                                <TextBlock Style="{StaticResource Icon}" Text="&#xEC50;" FontSize="20" Foreground="{StaticResource Brush.Warning}"/>
+                            </Border>
+                            <Border Width="{StaticResource Layout.DockIcon}" Height="{StaticResource Layout.DockIcon}" CornerRadius="{StaticResource Radius.Sm}" Margin="0,0,8,0">
+                                <TextBlock Style="{StaticResource Icon}" Text="&#xE756;" FontSize="20" Foreground="{StaticResource Brush.Accent2}"/>
+                            </Border>
+                            <Border Width="{StaticResource Layout.DockIcon}" Height="{StaticResource Layout.DockIcon}" CornerRadius="{StaticResource Radius.Sm}" Margin="0,0,8,0">
+                                <TextBlock Style="{StaticResource Icon}" Text="&#xE774;" FontSize="20" Foreground="{StaticResource Brush.Accent}"/>
+                            </Border>
+                            <Border Width="{StaticResource Layout.DockIcon}" Height="{StaticResource Layout.DockIcon}" CornerRadius="{StaticResource Radius.Sm}"
+                                    BorderBrush="{StaticResource Brush.Track}" BorderThickness="1.5" ToolTip="Добавить программу">
+                                <Border.Resources><Style TargetType="Border"/></Border.Resources>
+                                <TextBlock Style="{StaticResource Icon}" Text="&#xE710;" FontSize="14" Foreground="{StaticResource Brush.TextMuted}"/>
+                            </Border>
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+            </Border>
+
+            <!-- States -->
+            <TextBlock Text="States" Style="{StaticResource Text.Overline}" Foreground="White" Margin="0,24,0,8"/>
+            <Border Background="{StaticResource Brush.Bg}" CornerRadius="{StaticResource Radius.Lg}" Padding="16" HorizontalAlignment="Left">
+                <StackPanel Orientation="Horizontal">
+                    <Button Style="{StaticResource IconButton.Control}" Content="&#xE768;" ToolTip="Играть"/>
+                    <Button Style="{StaticResource IconButton.Control}" Content="&#xE768;" IsEnabled="False" Margin="12,0"/>
+                    <Button Style="{StaticResource IconButton.Ghost}" Content="&#xE893;" IsEnabled="False"/>
+                    <Slider Style="{StaticResource Slider.Thin}" Width="140" Value="4" Maximum="10" IsEnabled="False" Margin="16,0" VerticalAlignment="Center"/>
+                    <Border Background="{StaticResource Brush.Surface}" CornerRadius="{StaticResource Radius.Lg}" Padding="16,10">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Style="{StaticResource Icon}" Text="&#xE8D6;" FontSize="16" Foreground="{StaticResource Brush.TextFaint}"/>
+                            <TextBlock Style="{StaticResource Text.Muted}" Text="Ничего не играет" Margin="10,0,0,0"/>
+                        </StackPanel>
+                    </Border>
+                    <Border Background="{StaticResource Brush.Bg}" CornerRadius="{StaticResource Radius.Pill}" Padding="14,8" Margin="12,0,0,0"
+                            BorderBrush="{StaticResource Brush.SurfaceActive}" BorderThickness="1">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Style="{StaticResource Icon}" Text="&#xE73E;" FontSize="14" Foreground="{StaticResource Brush.Success}"/>
+                            <TextBlock Style="{StaticResource Text.Base}" FontSize="{StaticResource Type.Sm}" Text="Готово" Margin="8,0,0,0"/>
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+            </Border>
+        </StackPanel>
+    </Border>
+</Window>

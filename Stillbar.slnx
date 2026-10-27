@@ -1,0 +1,10 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Stillbar.App/Stillbar.App.csproj" />
+    <Project Path="src/Stillbar.Core/Stillbar.Core.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Stillbar.App.Tests/Stillbar.App.Tests.csproj" />
+    <Project Path="tests/Stillbar.Tests/Stillbar.Tests.csproj" />
+  </Folder>
+</Solution>

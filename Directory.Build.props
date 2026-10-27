@@ -1,0 +1,14 @@
+<Project>
+  <!--
+    Short build paths. This folder is ~180 characters deep and Windows' 260-character path limit is on
+    (LongPathsEnabled = 0), so the default bin\Debug\net10.0-windows10.0.19041.0\ layout produced paths of 261-278
+    characters: MSBuild could not see Stillbar.runtimeconfig.json, and WPF's second markup pass (…_wpftmp…) failed.
+    Outputs go to b\<Project>\Debug\, intermediates to o\<Project>\Debug\.
+  -->
+  <PropertyGroup>
+    <_ShortName>$(MSBuildProjectName.Replace('Stillbar.', ''))</_ShortName>
+    <BaseOutputPath>$(MSBuildThisFileDirectory)b\$(_ShortName)\</BaseOutputPath>
+    <BaseIntermediateOutputPath>$(MSBuildThisFileDirectory)o\$(_ShortName)\</BaseIntermediateOutputPath>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+  </PropertyGroup>
+</Project>

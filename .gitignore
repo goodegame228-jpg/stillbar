@@ -1,0 +1,18 @@
+# build output (see Directory.Build.props: short b\ and o\ paths)
+b/
+o/
+bin/
+obj/
+dist/
+
+# editor and local tools
+.vs/
+.claude/
+*.user
+*.suo
+
+# not part of the app
+replica/
+site/
+tools/ReplicaDiff/
+tools/serve-site.ps1

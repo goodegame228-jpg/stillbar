@@ -1,0 +1,29 @@
+<!--
+  Our own weather glyphs: stroked outlines in a 16x16 box, drawn with a 1.5 DIP round-capped pen.
+  Keys: Weather.{WeatherKind}[.Night]. Picked by BarViewModel.
+-->
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Geometry x:Key="Weather.Clear">M8,1 V2.6 M8,13.4 V15 M1,8 H2.6 M13.4,8 H15 M3.05,3.05 L4.2,4.2 M11.8,11.8 L12.95,12.95 M3.05,12.95 L4.2,11.8 M11.8,4.2 L12.95,3.05 M11,8 A3,3 0 1 1 5,8 A3,3 0 1 1 11,8 Z</Geometry>
+    <Geometry x:Key="Weather.Clear.Night">M13,10.2 A5.6,5.6 0 1 1 5.8,3 A4.4,4.4 0 0 0 13,10.2 Z</Geometry>
+    <Geometry x:Key="Weather.PartlyCloudy">M5.5,1.2 V2.2 M1.2,5.5 H2.2 M2.45,2.45 L3.15,3.15 M8.55,2.45 L7.85,3.15 M8,5.4 A2.6,2.6 0 1 0 3.6,7.4 M6.2,14 H12.6 A2.4,2.4 0 0 0 12.6,9.2 A3.4,3.4 0 0 0 6.1,9.8 A2.1,2.1 0 0 0 6.2,14 Z</Geometry>
+    <Geometry x:Key="Weather.Cloudy">M4.5,12.5 H12 A2.75,2.75 0 0 0 12,7 A4,4 0 0 0 4.4,7.6 A2.45,2.45 0 0 0 4.5,12.5 Z</Geometry>
+    <Geometry x:Key="Weather.Fog">M2,5 H14 M3.5,8 H12.5 M2,11 H14</Geometry>
+    <Geometry x:Key="Weather.Drizzle">M4.5,9.5 H12 A2.5,2.5 0 0 0 12,4.5 A3.7,3.7 0 0 0 4.8,5 A2.3,2.3 0 0 0 4.5,9.5 Z M6,12 V12.8 M9,13.2 V14 M12,12 V12.8</Geometry>
+    <Geometry x:Key="Weather.Rain">M4.5,9.5 H12 A2.5,2.5 0 0 0 12,4.5 A3.7,3.7 0 0 0 4.8,5 A2.3,2.3 0 0 0 4.5,9.5 Z M6.2,11.6 L5.2,14.2 M9.2,11.6 L8.2,14.2 M12.2,11.6 L11.2,14.2</Geometry>
+    <Geometry x:Key="Weather.Snow">M4.5,9.5 H12 A2.5,2.5 0 0 0 12,4.5 A3.7,3.7 0 0 0 4.8,5 A2.3,2.3 0 0 0 4.5,9.5 Z M6,12.4 H6.01 M9,14 H9.01 M12,12.4 H12.01 M7.5,14.6 H7.51 M10.5,12.6 H10.51</Geometry>
+    <Geometry x:Key="Weather.Thunder">M4.5,9.5 H12 A2.5,2.5 0 0 0 12,4.5 A3.7,3.7 0 0 0 4.8,5 A2.3,2.3 0 0 0 4.5,9.5 Z M9.2,10.4 L7.6,12.8 H9.8 L8.2,15.2</Geometry>
+
+    <Style x:Key="WeatherGlyph" TargetType="Path">
+        <Setter Property="Width" Value="16"/>
+        <Setter Property="Height" Value="16"/>
+        <Setter Property="Stretch" Value="None"/>
+        <Setter Property="StrokeThickness" Value="1.5"/>
+        <Setter Property="StrokeStartLineCap" Value="Round"/>
+        <Setter Property="StrokeEndLineCap" Value="Round"/>
+        <Setter Property="StrokeLineJoin" Value="Round"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="SnapsToDevicePixels" Value="False"/>
+    </Style>
+</ResourceDictionary>

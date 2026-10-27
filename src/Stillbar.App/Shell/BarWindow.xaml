@@ -1,0 +1,12 @@
+﻿<Window x:Class="Stillbar.App.Shell.BarWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Stillbar"
+        WindowStyle="None" AllowsTransparency="True" Background="Transparent"
+        ResizeMode="NoResize" ShowInTaskbar="False" ShowActivated="False" Topmost="True"
+        Width="760" Height="640">
+    <!--
+      Fixed-size, see-through host. The shape morphs inside it, so the HWND never resizes during animation
+      (resizing a layered window stutters). Fully transparent pixels pass mouse input to whatever is below.
+    -->
+</Window>
